@@ -32,6 +32,11 @@ public class MyHelloWebServlet extends HttpServlet {
         if (firstName == null ||  firstName.isEmpty()) {
             resp.sendError(resp.SC_BAD_REQUEST, "YOUR FIRS NAME IS EMPTY. WE NEEED TOUR NAME!!!");
         }
+
+        if (!email.contains("@")||!email.contains(".")||email.equals("")) {
+            resp.sendError(resp.SC_BAD_REQUEST, "DO NOT LIE TO ME");
+        }
+
         printWriter.close();
     }
 }

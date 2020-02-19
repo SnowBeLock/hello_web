@@ -26,12 +26,14 @@ public class MyHelloWebServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("Servlet post method started");
+
         String firstName = req.getParameter("firstName");
         String surname = req.getParameter("surname");
         String email = req.getParameter("email");
         String gender = req.getParameter("gender");
         String comments = req.getParameter("comment");
+        logger.info("Mandatory fields: "+firstName+" "+surname+" "+email+" "+gender+" "+comments);
+
         PrintWriter printWriter = resp.getWriter();
 
         printWriter.println("<h1>" + firstName + " " + surname + " logged in" + "</h1>");

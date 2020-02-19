@@ -20,9 +20,10 @@ public class MyHelloWebServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String firstName=req.getParameter("firstName");
         String surname=req.getParameter("surname");
+        String email=req.getParameter("email");
         PrintWriter printWriter= resp.getWriter();
 
-        printWriter.println("<h1>Hello, my sweet "+firstName+" "+surname+". Glad to see you again!</h1> ");
+        printWriter.println("<h1>"+firstName+" " +  surname+ " logged in" +"</h1>");
         printWriter.close();
     }
 }

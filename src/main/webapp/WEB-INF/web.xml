@@ -13,7 +13,7 @@
         <listener-class>lv.itlat.helloweb.listener.ContextListener</listener-class>
     </listener>
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
+        <welcome-file>Index.jsp</welcome-file>
     </welcome-file-list>
     <session-config>
         <session-timeout>20</session-timeout>

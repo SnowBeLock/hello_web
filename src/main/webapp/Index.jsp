@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><b>Log in</b></title>
+
+    <link rel="stylesheet" href="hello-web.css">
+</head>
+<body>
+
+<jsp:include page ="header.html" />
+
+<h1><b>Log in</b></h1>
+<form action="myhello" method="post">
+
+    <label class="text-mandatory" for="firstName">First Name:</label> <input  type="text" id="firstName" name="firstName" size="35"><br><br>
+    <label class="text-mandatory" for="surname">Surname:</label><input type="text" id="surname" name="surname" size="35" ><br><br>
+    <label class="text-mandatory" for="email">Email:</label><input type="text" id="email" name="email" size="35"><br><br>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label><br>
+
+    <label for="notify">Notify by email</label>
+    <input type="checkbox" id="notify" name="notify"><br>
+
+    <label for="comment">Comments:</label>
+    <textarea id="comment" name="comment" rows="4" cols="50" maxlength="100"></textarea>
+    <input type="submit" value="Register">
+
+
+
+</form>
+<jsp:include page ="footer.html" />
+</body>
+</html>

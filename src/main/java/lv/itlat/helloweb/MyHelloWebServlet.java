@@ -1,5 +1,6 @@
 package lv.itlat.helloweb;
 
+import lv.itlat.helloweb.model.Person;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -32,22 +33,32 @@ public class MyHelloWebServlet extends HttpServlet {
         String email = req.getParameter("email");
         String gender = req.getParameter("gender");
         String comments = req.getParameter("comment");
-        logger.info("Mandatory fields: "+firstName+" "+surname+" "+email+" "+gender+" "+comments);
 
-        PrintWriter printWriter = resp.getWriter();
+        final Person person=new Person();
+        person.setEmail(email);
+        person.setFirstName(firstName);
+        person.setSurname(surname);
 
-        printWriter.println("<h1>" + firstName + " " + surname + " logged in" + "</h1>");
+        req.setAttribute("person",person);
 
-
-        if (firstName == null ||  firstName.isEmpty()) {
-            resp.sendError(resp.SC_BAD_REQUEST, "YOUR FIRS NAME IS EMPTY. WE NEEED TOUR NAME!!!");
-        }
-
-        if (!email.contains("@")||!email.contains(".")||email.equals("")) {
-            resp.sendError(resp.SC_BAD_REQUEST, "DO NOT LIE TO ME");
-        }
-
-        printWriter.close();
-        logger.info("Servlet finished");
+        getServletContext().getRequestDispatcher("/result.jsp").forward(req,resp);
+//
+//        logger.info("Mandatory fields: "+firstName+" "+surname+" "+email+" "+gender+" "+comments);
+//
+//        PrintWriter printWriter = resp.getWriter();
+//
+//        printWriter.println("<h1>" + firstName + " " + surname + " logged in" + "</h1>");
+//
+//
+//        if (firstName == null ||  firstName.isEmpty()) {
+//            resp.sendError(resp.SC_BAD_REQUEST, "YOUR FIRS NAME IS EMPTY. WE NEEED TOUR NAME!!!");
+//        }
+//
+//        if (!email.contains("@")||!email.contains(".")||email.equals("")) {
+//            resp.sendError(resp.SC_BAD_REQUEST, "DO NOT LIE TO ME");
+//        }
+//
+//        printWriter.close();
+//        logger.info("Servlet finished");
     }
 }

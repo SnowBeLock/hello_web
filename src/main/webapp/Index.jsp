@@ -13,9 +13,16 @@
 <h1><b>Log in</b></h1>
 <form action="myhello" method="post">
 
-    <label class="text-mandatory" for="firstName">First Name:</label> <input  type="text" id="firstName" name="firstName" size="35"><br><br>
-    <label class="text-mandatory" for="surname">Surname:</label><input type="text" id="surname" name="surname" size="35" ><br><br>
-    <label class="text-mandatory" for="email">Email:</label><input type="text" id="email" name="email" size="35"><br><br>
+    <label class="text-mandatory" for="firstName">First Name:</label>
+    <input  type="text" id="firstName" name="firstName" size="35"><br>
+    ${errors['firstName']}
+    <br>
+    <label class="text-mandatory" for="surname">Surname:</label><input type="text" id="surname" name="surname" size="35" ><br>
+    ${errors['surname']}
+    <br>
+    <label class="text-mandatory" for="email">Email:</label><input type="text" id="email" name="email" size="35"><br>
+    ${errors['email']}
+    <br>
     <input type="radio" id="male" name="gender" value="male">
     <label for="male">Male</label><br>
     <input type="radio" id="female" name="gender" value="female">

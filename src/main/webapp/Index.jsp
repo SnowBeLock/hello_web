@@ -30,8 +30,6 @@
     <textarea id="comment" name="comment" rows="4" cols="50" maxlength="100"></textarea>
     <input type="submit" value="Register">
 
-
-
 </form>
 <jsp:include page ="footer.html" />
 </body>

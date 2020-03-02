@@ -1,9 +1,24 @@
 package lv.itlat.helloweb.model;
 
-public class Person {
+import javax.persistence.*;
+import java.io.Serializable;
+@Entity
+@Table(name = "PERSON")
+
+public class Person implements Serializable {
+
+    @Id
+    @Column(name = "Id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(name = "FIRST_NAME")
     private String firstName;
+    @Column(name = "LAST_NAME")
     private String surname;
+    @Column(name = "EMAIL")
     private String email;
+
+    public Integer getId(){return id;}
     //GETTERS OF NAME; SURNAME; EMAIL.
     public String getFirstName() {
         return firstName;

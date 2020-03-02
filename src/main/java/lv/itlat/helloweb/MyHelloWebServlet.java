@@ -2,6 +2,7 @@ package lv.itlat.helloweb;
 
 import lv.itlat.helloweb.helper.FormValidator;
 import lv.itlat.helloweb.model.Person;
+import lv.itlat.helloweb.presistence.repository.PersonRepository;
 import org.apache.log4j.Logger;
 
 import javax.inject.Inject;
@@ -17,7 +18,8 @@ import java.util.Map;
 
 @WebServlet(name = "myHelloWebServlet", urlPatterns = {"/myhello"}, loadOnStartup = 1)
 public class MyHelloWebServlet extends HttpServlet {
-
+@Inject
+PersonRepository personRepository;
 
     private Logger logger= Logger.getLogger(MyHelloWebServlet.class);
     @Override
@@ -56,6 +58,8 @@ public class MyHelloWebServlet extends HttpServlet {
         person.setEmail(email);
         person.setFirstName(firstName);
         person.setSurname(surname);
+
+        personRepository.create(person);
 
         req.setAttribute("person",person);
 

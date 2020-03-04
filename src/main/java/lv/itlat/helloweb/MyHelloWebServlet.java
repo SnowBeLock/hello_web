@@ -1,7 +1,7 @@
 package lv.itlat.helloweb;
 
 import lv.itlat.helloweb.helper.FormValidator;
-import lv.itlat.helloweb.model.Person;
+import lv.itlat.helloweb.presistence.domain.Person;
 import lv.itlat.helloweb.presistence.repository.PersonRepository;
 import org.apache.log4j.Logger;
 
@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Map;
 
 
@@ -57,7 +56,7 @@ PersonRepository personRepository;
         final Person person=new Person();
         person.setEmail(email);
         person.setFirstName(firstName);
-        person.setSurname(surname);
+        person.setLastName(surname);
 
         personRepository.create(person);
 

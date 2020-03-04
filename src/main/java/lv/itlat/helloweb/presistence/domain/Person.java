@@ -1,6 +1,7 @@
 package lv.itlat.helloweb.presistence.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
 @Entity
@@ -12,15 +13,15 @@ public class Person implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    //    @NotEmpty
+      @NotEmpty //Obligate to fill
     @Column(name = "FIRST_NAME")
     private String firstName;
 
-    //    @NotEmpty
+        @NotEmpty
     @Column(name = "LAST_NAME")
     private String lastName;
 
-    //    @NotEmpty
+        @NotEmpty
 //    @Email
     @Column(name = "EMAIL")
     private String email;

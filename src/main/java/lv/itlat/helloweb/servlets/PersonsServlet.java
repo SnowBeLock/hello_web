@@ -1,6 +1,6 @@
 package lv.itlat.helloweb.servlets;
 
-import lv.itlat.helloweb.model.Person;
+import lv.itlat.helloweb.presistence.domain.Person;
 import lv.itlat.helloweb.presistence.repository.PersonRepository;
 import org.apache.log4j.Logger;
 

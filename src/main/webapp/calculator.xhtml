@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<!--      xmlns:f="http://xmlns.jcp.org/jsf/core"-->
+<!--      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">-->
+<h:head>
+    <title>Simple Calculator</title>
+</h:head>
+<h:body>
+    <h1>Simple Calculator</h1>
+    <h:form id="form">
+        <div>
+            <h:outputLabel value="Value 1: "/>
+            <h:inputText id="value1" value="#{simpleCalculator.value1}"/>
+            <h:message for="value1" errorClass="error"/>
+        </div>
+        <div>
+            <h:outputLabel value="Value 2: "/>
+            <h:inputText id="value2"  value="#{simpleCalculator.value2}"/>
+            <h:message for="value2" errorClass="error"/>
+        </div>
+        <div>
+            <h:commandButton id="add" value="Add" action="#{simpleCalculator.add}"/>
+
+        </div>
+        <div>
+            <h:outputLabel value="Result: "/>
+            <h:outputText id="result" value="#{simpleCalculator.result}"/>
+        </div>
+
+        <hr/>
+    </h:form>
+</h:body>
+</html>

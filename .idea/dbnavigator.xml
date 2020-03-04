@@ -51,9 +51,6 @@
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
   </component>
-  <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/METAINF/data.sql" connection-id="78daff0b-9dd8-416c-b102-a414dc54b7f5" session-id="MAIN" current-schema="INFORMATION_SCHEMA" />
-  </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
     <execution-history>

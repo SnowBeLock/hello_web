@@ -68,7 +68,7 @@
     </listener>
 
     <welcome-file-list>
-        <welcome-file>jsf-hello.xhtml</welcome-file>
+        <welcome-file>person-list.xhtml</welcome-file>
     </welcome-file-list>
 
 

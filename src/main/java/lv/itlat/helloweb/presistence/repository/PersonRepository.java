@@ -1,18 +1,15 @@
 package lv.itlat.helloweb.presistence.repository;
-
-
-import lv.itlat.helloweb.model.Person;
-
+import lv.itlat.helloweb.presistence.domain.Person;
 import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.criteria.CriteriaQuery;
 import javax.transaction.Transactional;
 import java.util.List;
 
 @RequestScoped
 @Transactional
 public class PersonRepository {
+
     @PersistenceContext(unitName = "personsPU")
     private EntityManager em;
 
@@ -26,11 +23,24 @@ public class PersonRepository {
         return person;
     }
 
-    public List<Person> getAll() {
-        CriteriaQuery cq = getEntityManager().getCriteriaBuilder().
-                createQuery();
-        cq.select(cq.from(Person.class));
-        return getEntityManager().createQuery(cq).getResultList();
+    public void update(List<Person> persons) {
+        for (Person person : persons) {
+            getEntityManager().merge(person);
+        }
+    }
 
+    public void delete(Person person) {
+        if (getEntityManager().contains(person)) {
+            getEntityManager().remove(person);
+        } else {
+            Person managedPerson = getEntityManager().find(Person.class, person.getId());
+            if (managedPerson != null) {
+                getEntityManager().remove(managedPerson);
+            }
+        }
+    }
+
+    public List<Person> getAll() {
+        return getEntityManager().createQuery("SELECT p FROM Person p", Person.class).getResultList();
     }
 }
